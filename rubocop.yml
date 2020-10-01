@@ -2,13 +2,12 @@ version: 2.1
 descrption: Tasks for integrating Boxt's RuboCop style guide
 
 commands:
-
   lint:
     description: Run the linter against changes made on this branch
     steps:
       - run:
-        name: "Run RuboCop"
-        command: |
-          BASE_REVISION=<< pipeline.git.base_revision >>
-          DEFAULT_BASE=master
-          bundle exec rake lint:rubocop RUBOCOP_LINT_BASE=${BASE_REVISION:-$DEFAULT_BASE}
+          name: "Run RuboCop"
+          command: |
+            BASE_REVISION=<< pipeline.git.base_revision >>
+            DEFAULT_BASE=master
+            bundle exec rake lint:rubocop RUBOCOP_LINT_BASE=${BASE_REVISION:-$DEFAULT_BASE}
