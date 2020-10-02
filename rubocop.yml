@@ -1,5 +1,19 @@
 version: 2.1
 descrption: Tasks for integrating Boxt's RuboCop style guide
+
+examples:
+  lint:
+    description: Run the linter against changes made on this branch
+    usage:
+      version: 2.1
+      orbs:
+        rubocop: boxt/rubocop@x.y.z
+      steps:
+        - run:
+            name: "Run RuboCop"
+            command: |
+              bundle exec rake lint:rubocop RUBOCOP_LINT_BASE=<< parameters.base >>
+
 commands:
   lint:
     parameters:
