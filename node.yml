@@ -1,0 +1,21 @@
+version: 2.1
+descrption: Tasks for managing node Javascript packages in CircleCI builds
+commands:
+  cache-read:
+    steps:
+      - restore_cache:
+          keys:
+            - npm-cache-{{ checksum "yarn.lock" }}
+
+  cache-write:
+    steps:
+      - save_cache:
+          key: npm-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+
+  install:
+    steps:
+      - run:
+          name: "Install yarn dependencies"
+          command: yarn install

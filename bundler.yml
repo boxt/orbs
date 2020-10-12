@@ -1,0 +1,35 @@
+version: 2.1
+descrption: Tasks for managing Ruby gems in CircleCI builds
+commands:
+  cache-read:
+    steps:
+      - restore_cache:
+          keys:
+            - gem-cache-{{ checksum "Gemfile.lock" }}
+
+  cache-write:
+    steps:
+      - save_cache:
+          key: gem-cache-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ./vendor/bundle
+            - ~/.bundle/config
+
+  install:
+    steps:
+      - run:
+          name: "Install bundler dependencies"
+          command: |
+            bundle config set path vendor/bundle
+            bundle config set clean true
+            bundle config set with ci
+            bundle config jobs set with 3
+            bundle check || bundle install
+
+  audit:
+    steps:
+      - run:
+          name: "Bundle audit"
+          command: |
+            gem install bundle-audit
+            bundle-audit check --update

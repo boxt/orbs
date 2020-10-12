@@ -1,0 +1,21 @@
+version: 2.1
+descrption: Tasks for managing Rails assets in CircleCI builds
+commands:
+  precompile:
+    steps:
+      - run:
+          name: "Precompile assets"
+          command: bundle exec rails assets:precompile
+
+  cache-read:
+    steps:
+      - restore_cache:
+          keys:
+            - assets-cache-{{ .Environment.CIRCLE_SHA1 }}
+  cache-write:
+    steps:
+      - save_cache:
+          key: assets-cache-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ./public/assets
+            - ./public/packs-test
