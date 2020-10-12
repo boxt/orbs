@@ -12,6 +12,13 @@ commands:
     description: Run the linter against changes made on this branch
     steps:
       - run:
+          name: "Prepare git repo for diff"
+          command: |
+            git checkout -q develop
+            git reset --hard -q origin/<< parameters.base >>
+            git checkout -q $CIRCLE_BRANCH
+
+      - run:
           name: "Run RuboCop"
           command: |
             bundle exec rails lint:rubocop RUBOCOP_LINT_BASE=<< parameters.base >>
