@@ -14,7 +14,7 @@ commands:
       - run:
           name: "Prepare git repo for diff"
           command: |
-            git checkout -q develop
+            git checkout -q << parameters.base >>
             git reset --hard -q origin/<< parameters.base >>
             git checkout -q $CIRCLE_BRANCH
 

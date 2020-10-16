@@ -1,0 +1,23 @@
+version: 2.1
+
+description: Read and write the repository directory to cache
+
+commands:
+  cache-read:
+    steps:
+      - restore_cache:
+          keys:
+            - v2-repo-{{ .Environment.CIRCLE_SHA1 }}
+
+  cache-write:
+    parameters:
+      path:
+        description: Base path for the app directory
+        type: string
+        default: ~/app
+
+    steps:
+      - save_cache:
+          key: v2-repo-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - << parameters.path >>
