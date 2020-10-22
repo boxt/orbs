@@ -25,7 +25,9 @@ To release a new version of an orb, please make sure you have the CircleCI CLI t
 
 1. Create a feature branch for your changes
 
+    ```
     git flow feature start my-change
+    ```
 
 2. Stage and commit your changes to the repo
 
