@@ -53,19 +53,20 @@ To release a new version of an orb, please make sure you have the CircleCI CLI t
 
 5. Merge your changes into the `develop` branch
 
-      git flow feature finish my-change
+    `git flow feature finish my-change`
 
 6. Release a new version via Git Flow
 
-      git flow release start 1.2.3
+    `git flow release start 1.2.3`
 
 7. Merge in changes as required
 8. Finish the release
 
 
-      git flow release finish 1.2.3
+    `git flow release finish 1.2.3`
 
 9. Push to GitHub
 
-      git push --all
-      git push --tags 
+    `git push --all`
+    
+    `git push --tags`
