@@ -1,0 +1,3 @@
+[submodule "rubocop"]
+	path = rubocop
+	url = git@github.com:boxt/rubocop-orb.git
