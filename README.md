@@ -62,11 +62,16 @@ To release a new version of an orb, please make sure you have the CircleCI CLI t
 7. Merge in changes as required
 8. Finish the release
 
-
-    `git flow release finish 1.2.3`
+    ``` bash
+    git flow release finish 1.2.3
+    ```
 
 9. Push to GitHub
 
-    `git push --all`
-    
-    `git push --tags`
+    ``` sh
+    git push --all
+    ```
+
+    ``` sh
+    git push --tags
+    ```
