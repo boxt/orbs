@@ -21,6 +21,8 @@ Once you make changes to an orb, add and commit them to the submodule in the sam
 
 ### Releasing a new version
 
+**Orbs are versioned separately, and so should be managed as individual repos.**
+
 To release a new version of an orb, please make sure you have the CircleCI CLI tool installed (`brew install circleci`)
 
 1. Create a feature branch for your changes
