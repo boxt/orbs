@@ -20,3 +20,52 @@ Each orb lives in its own repository, and is installed as a sub-repository of th
 Once you make changes to an orb, add and commit them to the submodule in the same way you would any other repo.
 
 ### Releasing a new version
+
+To release a new version of an orb, please make sure you have the CircleCI CLI tool installed (`brew install circleci`)
+
+1. Create a feature branch for your changes
+
+    git flow feature start my-change
+
+2. Stage and commit your changes to the repo
+
+    git add .
+
+    git commit -am "I done stuff"
+
+3. Release a dev version of your changes to test on another repository
+
+    circleci orb publish boxt/<orb name>@dev:x.y.z
+
+4. Test your changes, by pointing your main repository CircleCI config to your development version
+
+    ``` yml
+    # config.yml
+
+    version: 2.1
+
+    # ... other stuff
+
+    orbs:
+      yourorb: boxt/yourorb@dev:x.y.z
+
+    ```
+
+5. Merge your changes into the `develop` branch
+
+      git flow feature finish my-change
+
+6. Release a new version via Git Flow
+
+      git flow release start 1.2.3
+
+7. Merge in changes as required
+8. Finish the release
+
+
+      git flow release finish 1.2.3
+
+9. Push to GitHub
+
+      git push --all
+      git push --tags 
