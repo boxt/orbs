@@ -1,3 +1,15 @@
 [submodule "rubocop"]
 	path = rubocop
 	url = git@github.com:boxt/rubocop-orb.git
+[submodule "bundler"]
+	path = bundler
+	url = git@github.com:boxt/bundler-orb.git
+[submodule "git"]
+	path = git
+	url = git@github.com:boxt/git-orb.git
+[submodule "node"]
+	path = node
+	url = git@github.com:boxt/node-orb.git
+[submodule "rails-assets"]
+	path = rails-assets
+	url = git@github.com:boxt/rails-assets-orb.git
