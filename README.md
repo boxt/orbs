@@ -85,3 +85,8 @@ To release a new version of an orb, please make sure you have the CircleCI CLI t
     ``` bash
     git push --tags
     ```
+10. Update _this_ repo to make sure we're tracking the latest version
+
+## Install snippet
+
+You'll see the HTML comment  `<!-- VERSION_SNIPPET_START -->` in each of the README.md documents. The contents of this are automatically maintained by a GitHub workflow. See the `./.github/workflows/*.yml` files for more info.
