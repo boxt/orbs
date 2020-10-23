@@ -89,4 +89,4 @@ To release a new version of an orb, please make sure you have the CircleCI CLI t
 
 ## Install snippet
 
-You'll see the HTML comment  `<!-- VERSION_SNIPPET_START -->` in each of the README.md documents. The contents of this are automatically maintained by a GitHub workflow. See the `./.github/workflows/*.yml` files for more info.
+You'll see the HTML comment  `<!-- VERSION_SNIPPET_START --><!-- VERSION_SNIPPET_END -->` in each of the README.md documents. The contents of this are automatically maintained by a GitHub workflow. See the `./.github/workflows/*.yml` files for more info.
