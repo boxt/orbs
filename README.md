@@ -51,7 +51,7 @@ git commit -am "I done stuff"
 3) Release a dev version of your changes to test on another repository.
 
 ```sh
-circleci orb publish boxt/<orb name>@dev:x.y.z
+circleci orb publish config boxt/<orb name>@dev:x.y.z
 ```
 
 4) Test your changes by pointing your project's CircleCI config at your orb's development version.
@@ -90,7 +90,13 @@ git flow release finish 1.2.3
 git push origin master && git push origin develop && git push --tags
 ```
 
-10) Update _this_ repo to make sure we're tracking the latest orb versions
+10) Release final version of your orb.
+
+```sh
+circleci orb publish config boxt/<orb name>@x.y.z
+```
+
+11) Update _this_ repo to make sure we're tracking the latest orb versions
 
 ## Install snippet
 
