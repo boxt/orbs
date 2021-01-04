@@ -51,7 +51,7 @@ git commit -am "I done stuff"
 3) Release a dev version of your changes to test on another repository.
 
 ```sh
-circleci orb publish config boxt/<orb name>@dev:x.y.z
+circleci orb publish config.yml boxt/<orb name>@dev:x.y.z
 ```
 
 4) Test your changes by pointing your project's CircleCI config at your orb's development version.
