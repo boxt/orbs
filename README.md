@@ -93,7 +93,7 @@ git push origin master && git push origin develop && git push --tags
 10) Release final version of your orb.
 
 ```sh
-circleci orb publish config boxt/<orb name>@x.y.z
+circleci orb publish config.yml boxt/<orb name>@x.y.z
 ```
 
 11) Update _this_ repo to make sure we're tracking the latest orb versions
