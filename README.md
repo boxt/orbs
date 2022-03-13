@@ -87,7 +87,7 @@ git flow release finish 1.2.3
 9) Push orb updated branches and tag to GitHub
 
 ```sh
-git push origin master && git push origin develop && git push --tags
+git push origin main && git push origin develop && git push --tags
 ```
 
 10) Release final version of your orb.
