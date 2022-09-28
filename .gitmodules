@@ -13,3 +13,6 @@
 [submodule "rails-assets"]
 	path = rails-assets
 	url = git@github.com:boxt/rails-assets-orb.git
+[submodule "yarn"]
+	path = yarn
+	url = git@github.com:boxt/yarn-orb.git
